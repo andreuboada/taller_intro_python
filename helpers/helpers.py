@@ -17,7 +17,9 @@ def updateGraph(i, data):
   positions = range(len(data));
   plt.clf();
   labels = positions;
+  rango = range(max(data))
   plt.xticks(positions, labels, rotation='horizontal');
+  plt.xticks(rango, rango, rotation='horizontal');
   plt.bar(positions, data, color=colors);
   display.display(plt.gcf()); 
   display.clear_output(wait=True);
