@@ -4,6 +4,7 @@ import time
 import csv
 from IPython import display
 import pandas as pd
+import numpy as np
 
 
 # Create data arrays
