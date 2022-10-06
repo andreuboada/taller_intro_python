@@ -1,7 +1,35 @@
 import matplotlib.pyplot as plt
 import matplotlib
 import time
+import csv
 from IPython import display
+import pandas as pd
+
+
+# Create data arrays
+
+def read_president_heights():
+
+  data = pd.read_csv('data/president_heights.csv')
+  heights = np.array(data['height(cm)'])
+
+  return heights
+
+
+def read_qualities(color):
+
+  if(color == 'red'):
+    with open('data/winequality-red.csv', 'r') as f:
+      wines = list(csv.reader(f, delimiter=';'))
+    qualities = [float(item[-1]) for item in wines[1:]]
+  else:
+    with open('data/winequality-white.csv', 'r') as f:
+      wines = list(csv.reader(f, delimiter=';'))
+    qualities = [float(item[-1]) for item in wines[1:]]
+
+  return qualities
+
+
 
 # Plotting 
 
