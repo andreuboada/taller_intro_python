@@ -9,6 +9,14 @@ import numpy as np
 
 # Create data arrays
 
+def read_rainy_days():
+
+  rainfall = pd.read_csv('data/Seattle2014.csv')['PRCP'].values
+  inches = rainfall / 254.0  # 1/10mm -> inches
+
+  return inches
+
+
 def read_president_heights():
 
   data = pd.read_csv('data/president_heights.csv')
